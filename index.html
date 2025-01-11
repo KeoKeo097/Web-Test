@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki-Anime</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -14,7 +14,8 @@
             background-color: #f4f4f4;
         }
         .container {
-            width: 90%;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -61,6 +62,18 @@
             max-width: 100%;
             height: auto;
         }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
         @media (max-width: 600px) {
             body {
                 font-size: 14px;
@@ -70,6 +83,42 @@
             }
             p, li {
                 font-size: 12px;
+            }
+        }
+        @media (max-width: 375px) and (min-device-width: 320px) {
+            /* iPhone SE, iPhone 5, iPhone 5S, iPhone 5C */
+            body {
+                font-size: 12px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p, li {
+                font-size: 10px;
+            }
+        }
+        @media (max-width: 414px) and (min-device-width: 375px) {
+            /* iPhone 6, iPhone 6S, iPhone 7, iPhone 8, iPhone X, iPhone XS, iPhone 11 Pro */
+            body {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p, li {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 768px) and (min-device-width: 414px) {
+            /* iPhone 6 Plus, iPhone 6S Plus, iPhone 7 Plus, iPhone 8 Plus, iPhone XR, iPhone XS Max, iPhone 11, iPhone 11 Pro Max */
+            body {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p, li {
+                font-size: 14px;
             }
         }
     </style>
@@ -93,7 +142,30 @@
                 element.muted = true;
             });
             document.getElementById('muteButton').style.backgroundColor = 'red';
+
+            const scrollToTopButton = document.getElementById('scrollToTopButton');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    scrollToTopButton.style.display = 'block';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            fitToWindow();
+            window.addEventListener('resize', fitToWindow);
         });
+
+        function fitToWindow() {
+            const container = document.querySelector('.container');
+            const scale = Math.min(window.innerWidth / container.offsetWidth, 1);
+            container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'top left';
+        }
     </script>
 </head>
 <body>
@@ -144,6 +216,7 @@
             <a href="https://www.youtube.com/@POPSAnime"><input type="button" style="background-color: blueviolet; color: azure;" value="Nguồn Video" ></a>
         </div>
     </div>
+    <button id="scrollToTopButton" class="scroll-to-top">Top</button>
     <br>
 </body>
 </html>
