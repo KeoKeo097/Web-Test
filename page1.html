@@ -72,8 +72,33 @@
             }
         }
     </style>
+    <script>
+        function toggleMute() {
+            const mediaElements = document.querySelectorAll('audio, video');
+            const muteButton = document.getElementById('muteButton');
+            mediaElements.forEach(element => {
+                element.muted = !element.muted;
+            });
+            if (mediaElements.length > 0 && mediaElements[0].muted) {
+                muteButton.style.backgroundColor = 'red';
+            } else {
+                muteButton.style.backgroundColor = '';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mediaElements = document.querySelectorAll('audio, video');
+            mediaElements.forEach(element => {
+                element.muted = true;
+            });
+            document.getElementById('muteButton').style.backgroundColor = 'red';
+        });
+    </script>
 </head>
 <body>
+    <div class="button-container">
+        <input type="button" id="muteButton" value="Mute/Unmute" onclick="toggleMute()">
+    </div>
     <div id="tranghome"></div>
     <div class="container">
         <div class="button-container">
@@ -85,7 +110,7 @@
         <div class="center">
             <h1>
                 <hr>
-                ConanVideo-Web
+                Conan Video-Web
                 <hr>
             </h1>
         </div>
@@ -98,7 +123,7 @@
             <h2>
                 ANIME VIDEO
             </h2>
-            <video src="media/Netflix Anime.mp4" controls="controls;autoplay" width="90%" title="anime"></video>
+            <video src="media/Netflix Anime.mp4" controls autoplay width="90%" title="anime"></video>
         </div>
         <ol>
             <li>Tập phim live action của Thám tử lừng danh Conan</li>
