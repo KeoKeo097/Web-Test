@@ -85,15 +85,112 @@
                 font-size: 12px;
             }
         }
-        @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+        @media (max-width: 375px) and (min-device-width: 320px) {
+            /* iPhone SE, iPhone 5, iPhone 5S, iPhone 5C */
+            body {
+                font-size: 12px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p, li {
+                font-size: 10px;
+            }
+        }
+        @media (max-width: 414px) and (min-device-width: 375px) {
+            /* iPhone 6, iPhone 6S, iPhone 7, iPhone 8, iPhone X, iPhone XS, iPhone 11 Pro */
+            body {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p, li {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 768px) and (min-device-width: 414px) {
+            /* iPhone 6 Plus, iPhone 6S Plus, iPhone 7 Plus, iPhone 8 Plus, iPhone XR, iPhone XS Max, iPhone 11, iPhone 11 Pro Max */
             body {
                 font-size: 16px;
             }
             h1 {
-                font-size: 26px;
+                font-size: 28px;
             }
             p, li {
                 font-size: 14px;
+            }
+        }
+        @media (max-width: 1024px) {
+            /* Common tablet resolution */
+            body {
+                font-size: 18px;
+            }
+            h1 {
+                font-size: 30px;
+            }
+            p, li {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 1366px) {
+            /* Common laptop resolution */
+            body {
+                font-size: 20px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            p, li {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 1920px) {
+            /* Common desktop resolution */
+            body {
+                font-size: 22px;
+            }
+            h1 {
+                font-size: 34px;
+            }
+            p, li {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 360px) {
+            /* Samsung Galaxy S8, S9, S10 */
+            body {
+                font-size: 13px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            p, li {
+                font-size: 11px;
+            }
+        }
+        @media (max-width: 411px) {
+            /* Google Pixel 2, 3 */
+            body {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p, li {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 375px) {
+            /* iPhone 12 Mini */
+            body {
+                font-size: 13px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            p, li {
+                font-size: 11px;
             }
         }
     </style>
@@ -130,7 +227,17 @@
             scrollToTopButton.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+
+            fitToWindow();
+            window.addEventListener('resize', fitToWindow);
         });
+
+        function fitToWindow() {
+            const container = document.querySelector('.container');
+            const scale = Math.min(window.innerWidth / container.offsetWidth, 1);
+            container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'top left';
+        }
     </script>
 </head>
 <body>
