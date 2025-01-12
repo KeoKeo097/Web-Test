@@ -61,6 +61,7 @@
         }
         p {
             text-align: justify;
+            text-indent: 2em; /* Indent the first line of each paragraph */
         }
         img, video {
             max-width: 100%;
@@ -252,7 +253,7 @@
 </head>
 <body>
     <div class="button-container">
-        <input type="button" id="muteButton" value="Mute/Unmute" onclick="toggleMute()">
+        <input type="button" id="muteButton" value="Unmute" onclick="toggleMute()">
     </div>
     <div id="tranghome"></div>
     <div class="container">
@@ -279,7 +280,7 @@
         <hr>
         <div class="center">
             <img src="Media/R.gif" alt="F5" title="anime">
-            <p>
+            <p style="text-align: center; text-indent: 0;">
                 C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>
                 m<sup>2</sup>
             </p>
