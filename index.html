@@ -7,7 +7,7 @@
     <meta name="description" content="Wiki-Anime - A comprehensive guide to Detective Conan series.">
     <meta name="keywords" content="Detective Conan, Anime, Manga, Wiki, Aoyama Gosho">
     <meta name="author" content="Wiki-Anime Team">
-    <title>Wiki-Anime</title>
+    <title>Fan-Book-Anime</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -70,13 +70,19 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            display: none;
+            display: block;
             background-color: #000;
             color: #fff;
-            border: none;
+            border: 2px solid #1E90FF; /* Blue border */
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        .scroll-to-top.show {
+            opacity: 1;
         }
         @media (max-width: 600px) {
             body {
@@ -222,9 +228,9 @@
             const scrollToTopButton = document.getElementById('scrollToTopButton');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 200) {
-                    scrollToTopButton.style.display = 'block';
+                    scrollToTopButton.classList.add('show');
                 } else {
-                    scrollToTopButton.style.display = 'none';
+                    scrollToTopButton.classList.remove('show');
                 }
             });
 
@@ -260,7 +266,7 @@
         <div class="center">
             <h1>
                 <hr>
-                Conan Wiki-Web
+                Conan Book-Web
                 <hr>
             </h1>
         </div>
