@@ -1,0 +1,187 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.button-container a {
+    text-decoration: none;
+}
+.button-container input {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.center {
+    text-align: center;
+}
+h1, h2 {
+    margin: 10px 0;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin: 5px 0;
+}
+p {
+    text-align: justify;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    p, li {
+        font-size: 12px;
+    }
+}
+@media (max-width: 375px) and (min-device-width: 320px) {
+    /* iPhone SE, iPhone 5, iPhone 5S, iPhone 5C */
+    body {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    p, li {
+        font-size: 10px;
+    }
+}
+@media (max-width: 414px) and (min-device-width: 375px) {
+    /* iPhone 6, iPhone 6S, iPhone 7, iPhone 8, iPhone X, iPhone XS, iPhone 11 Pro */
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    p, li {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) and (min-device-width: 414px) {
+    /* iPhone 6 Plus, iPhone 6S Plus, iPhone 7 Plus, iPhone 8 Plus, iPhone XR, iPhone XS Max, iPhone 11, iPhone 11 Pro Max */
+    body {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    p, li {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1024px) {
+    /* Common tablet resolution */
+    body {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    p, li {
+        font-size: 16px;
+    }
+}
+@media (max-width: 1366px) {
+    /* Common laptop resolution */
+    body {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    p, li {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1920px) {
+    /* Common desktop resolution */
+    body {
+        font-size: 22px;
+    }
+    h1 {
+        font-size: 34px;
+    }
+    p, li {
+        font-size: 20px;
+    }
+}
+@media (max-width: 360px) {
+    /* Samsung Galaxy S8, S9, S10 */
+    body {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    p, li {
+        font-size: 11px;
+    }
+}
+@media (max-width: 411px) {
+    /* Google Pixel 2, 3 */
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    p, li {
+        font-size: 12px;
+    }
+}
+@media (max-width: 375px) {
+    /* iPhone 12 Mini */
+    body {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    p, li {
+        font-size: 11px;
+    }
+}
